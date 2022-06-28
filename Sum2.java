@@ -18,7 +18,7 @@ public class Sum2 {
         Arrays.sort(arr);
         while (first < last) {
 
-            if (first != 0 && arr[first] == arr[first - 1]) {
+            if (first > start && arr[first] == arr[first - 1]) {
                 first++;
                 continue;
             }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Sum3 {
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 4, 1, 2, 1, 2, 1, 4, 5, 3};
-        List<List<Integer>> res = threeSum(arr,9);
+        int arr[] = {-1,0,1,2,-1,-4};
+        List<List<Integer>> res = threeSum(arr,0);
        System.out.println(res);
         
         
@@ -14,8 +14,6 @@ public class Sum3 {
     {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-
         for(int i=0;i<arr.length-2;i++)
         {
             if(i!=0&&arr[i]==arr[i-1]) {
@@ -49,10 +47,14 @@ public class Sum3 {
                 last--;
                 res.add(l);
             }
-            if (arr[first] + arr[last] < target) {
-                first++;
-            } else {
-                last--;
+            else{
+                if (arr[first] + arr[last] < target) {
+                    first++;
+                }
+                else {
+                    last--;
+                }
+
             }
 
         }
